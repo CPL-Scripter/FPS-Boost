@@ -514,7 +514,7 @@ title.TextTransparency = 1
 title.Text = "FPS Boost"
 title.TextColor3 = Color3.new(1, 1, 1)
 title.Font = Enum.Font.GothamBold
-title.TextSize = 15
+title.TextSize = 16 -- Diperbesar dikit
 title.TextXAlignment = Enum.TextXAlignment.Left
 title.Parent = frame
 
@@ -644,7 +644,7 @@ fpsLabel.RichText = true
 fpsLabel.Text = "FPS : 0  |  MS : 0"
 fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 255) 
 fpsLabel.Font = Enum.Font.GothamBold
-fpsLabel.TextSize = 14 
+fpsLabel.TextSize = 15 -- Diperbesar dikit
 fpsLabel.TextXAlignment = Enum.TextXAlignment.Center
 fpsLabel.Parent = mainMenu
 Instance.new("UICorner", fpsLabel).CornerRadius = UDim.new(0, 6) 
@@ -670,7 +670,7 @@ settingsMenu.BackgroundTransparency = 1
 settingsMenu.BorderSizePixel = 0
 settingsMenu.ScrollBarThickness = 3
 settingsMenu.ScrollBarImageColor3 = Color3.fromRGB(150, 150, 150)
-settingsMenu.CanvasSize = UDim2.new(0, 0, 0, 395)
+settingsMenu.CanvasSize = UDim2.new(0, 0, 0, 389)
 settingsMenu.AutomaticCanvasSize = Enum.AutomaticSize.None
 settingsMenu.ScrollingDirection = Enum.ScrollingDirection.Y
 settingsMenu.ClipsDescendants = true
@@ -813,17 +813,17 @@ UI.fpsCapDot.BorderSizePixel = 0
 UI.fpsCapDot.Parent = fpsCapBtn
 Instance.new("UICorner", UI.fpsCapDot).CornerRadius = UDim.new(1, 0)
 
--- FPS CAP SLIDER CONTAINER
+-- FPS CAP SLIDER CONTAINER (Dinaikkan dan dirapatkan spacenya)
 local fpsCapBox = Instance.new("Frame")
-fpsCapBox.Size = UDim2.new(0, 166, 0, 26)
-fpsCapBox.Position = UDim2.new(0, 6, 0, 139)
-fpsCapBox.BackgroundTransparency = 1 -- Transparan sesuai permintaan
+fpsCapBox.Size = UDim2.new(0, 166, 0, 22)
+fpsCapBox.Position = UDim2.new(0, 6, 0, 136)
+fpsCapBox.BackgroundTransparency = 1
 fpsCapBox.BorderSizePixel = 0
 fpsCapBox.Parent = settingsMenu
 
 local fpsCapValueLabel = Instance.new("TextLabel")
 fpsCapValueLabel.Size = UDim2.new(1, -16, 0, 10)
-fpsCapValueLabel.Position = UDim2.new(0, 8, 0, 1)
+fpsCapValueLabel.Position = UDim2.new(0, 4, 0, 0)
 fpsCapValueLabel.BackgroundTransparency = 1
 fpsCapValueLabel.Text = tostring(currentFpsCap) .. " FPS Cap"
 fpsCapValueLabel.TextColor3 = Color3.fromRGB(70, 255, 70)
@@ -833,8 +833,8 @@ fpsCapValueLabel.TextXAlignment = Enum.TextXAlignment.Left
 fpsCapValueLabel.Parent = fpsCapBox
 
 local fpsCapSliderContainer = Instance.new("Frame")
-fpsCapSliderContainer.Size = UDim2.new(1, -12, 0, 14)
-fpsCapSliderContainer.Position = UDim2.new(0, 6, 0, 11)
+fpsCapSliderContainer.Size = UDim2.new(1, -8, 0, 12)
+fpsCapSliderContainer.Position = UDim2.new(0, 4, 0, 9)
 fpsCapSliderContainer.BackgroundTransparency = 1
 fpsCapSliderContainer.Active = true
 fpsCapSliderContainer.Parent = fpsCapBox
@@ -889,7 +889,7 @@ updateFpsCapSliderVisual(currentFpsCap)
 -- AFK SETTINGS
 UI.afkSettingsLabel = Instance.new("TextLabel")
 UI.afkSettingsLabel.Size = UDim2.new(0, 166, 0, 12)
-UI.afkSettingsLabel.Position = UDim2.new(0, 6, 0, 169)
+UI.afkSettingsLabel.Position = UDim2.new(0, 6, 0, 163)
 UI.afkSettingsLabel.BackgroundTransparency = 1
 UI.afkSettingsLabel.Text = "AFK Settings"
 UI.afkSettingsLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -901,7 +901,7 @@ UI.afkSettingsLabel.Parent = settingsMenu
 local afkBtn = Instance.new("TextButton")
 afkBtn.Size = UDim2.new(0, 166, 0, 28)
 afkBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-afkBtn.Position = UDim2.new(0, 6 + 83, 0, 182 + 14)
+afkBtn.Position = UDim2.new(0, 6 + 83, 0, 176 + 14)
 afkBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 afkBtn.Text = ""
 afkBtn.AutoButtonColor = false
@@ -945,7 +945,7 @@ Instance.new("UICorner", UI.afkDot).CornerRadius = UDim.new(1, 0)
 
 local afkSliderContainer = Instance.new("Frame")
 afkSliderContainer.Size = UDim2.new(0, 166, 0, 24)
-afkSliderContainer.Position = UDim2.new(0, 6, 0, 214)
+afkSliderContainer.Position = UDim2.new(0, 6, 0, 208)
 afkSliderContainer.BackgroundTransparency = 1
 afkSliderContainer.Active = true
 afkSliderContainer.Parent = settingsMenu
@@ -1024,7 +1024,7 @@ updateSliderVisual(afkLevel)
 -- SCRIPT SETTINGS
 UI.scriptSettingsLabel = Instance.new("TextLabel")
 UI.scriptSettingsLabel.Size = UDim2.new(0, 166, 0, 12)
-UI.scriptSettingsLabel.Position = UDim2.new(0, 6, 0, 244)
+UI.scriptSettingsLabel.Position = UDim2.new(0, 6, 0, 238)
 UI.scriptSettingsLabel.BackgroundTransparency = 1
 UI.scriptSettingsLabel.Text = "Script Settings"
 UI.scriptSettingsLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -1036,7 +1036,7 @@ UI.scriptSettingsLabel.Parent = settingsMenu
 local animBtn = Instance.new("TextButton")
 animBtn.Size = UDim2.new(0, 166, 0, 28)
 animBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-animBtn.Position = UDim2.new(0, 6 + 83, 0, 257 + 14)
+animBtn.Position = UDim2.new(0, 6 + 83, 0, 251 + 14)
 animBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 animBtn.Text = ""
 animBtn.AutoButtonColor = false
@@ -1081,7 +1081,7 @@ Instance.new("UICorner", UI.animDot).CornerRadius = UDim.new(1, 0)
 local autoOnBtn = Instance.new("TextButton")
 autoOnBtn.Size = UDim2.new(0, 166, 0, 28)
 autoOnBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-autoOnBtn.Position = UDim2.new(0, 6 + 83, 0, 289 + 14)
+autoOnBtn.Position = UDim2.new(0, 6 + 83, 0, 283 + 14)
 autoOnBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 autoOnBtn.Text = ""
 autoOnBtn.AutoButtonColor = false
@@ -1126,7 +1126,7 @@ Instance.new("UICorner", UI.autoOnDot).CornerRadius = UDim.new(1, 0)
 local autoExecBtn = Instance.new("TextButton")
 autoExecBtn.Size = UDim2.new(0, 166, 0, 28)
 autoExecBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-autoExecBtn.Position = UDim2.new(0, 6 + 83, 0, 321 + 14)
+autoExecBtn.Position = UDim2.new(0, 6 + 83, 0, 315 + 14)
 autoExecBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 autoExecBtn.Text = ""
 autoExecBtn.AutoButtonColor = false
@@ -1171,7 +1171,7 @@ Instance.new("UICorner", UI.autoExecDot).CornerRadius = UDim.new(1, 0)
 -- FITUR LANGUAGE
 local langContainer = Instance.new("Frame")
 langContainer.Size = UDim2.new(0, 166, 0, 28)
-langContainer.Position = UDim2.new(0, 6, 0, 353)
+langContainer.Position = UDim2.new(0, 6, 0, 347)
 langContainer.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 langContainer.BorderSizePixel = 0
 langContainer.ClipsDescendants = true
@@ -1204,7 +1204,7 @@ UI.langSelectedLabel.BackgroundTransparency = 1
 UI.langSelectedLabel.Text = flagMap[currentLang]
 UI.langSelectedLabel.TextColor3 = Color3.fromRGB(160, 160, 160)
 UI.langSelectedLabel.Font = Enum.Font.Gotham
-UI.langSelectedLabel.TextSize = 9
+UI.langSelectedLabel.TextSize = 10 -- Diperbesar teks negaranya
 UI.langSelectedLabel.TextXAlignment = Enum.TextXAlignment.Left
 UI.langSelectedLabel.Parent = langHeaderBtn
 
@@ -1235,7 +1235,7 @@ for idx, langName in ipairs(languageOrder) do
 	optBtn.Text = "  " .. flagMap[langName]
 	optBtn.TextColor3 = (langName == currentLang) and Color3.new(1, 1, 1) or Color3.fromRGB(120, 120, 120)
 	optBtn.Font = Enum.Font.GothamBold
-	optBtn.TextSize = 10
+	optBtn.TextSize = 12 -- Diperbesar teks negaranya
 	optBtn.TextXAlignment = Enum.TextXAlignment.Left
 	optBtn.AutoButtonColor = false
 	optBtn.Parent = UI.langListFrame
@@ -1244,7 +1244,7 @@ for idx, langName in ipairs(languageOrder) do
 end
 
 local isLangExpanded = false
-local BASE_SETTINGS_CANVAS = 395
+local BASE_SETTINGS_CANVAS = 389
 local EXPANDED_LANG_HEIGHT = 32 + (#languageOrder * 23)
 local EXPANDED_SETTINGS_CANVAS = BASE_SETTINGS_CANVAS + (#languageOrder * 23) + 4
 
