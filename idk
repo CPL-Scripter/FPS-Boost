@@ -506,16 +506,18 @@ navBackBtn.Visible = false
 navBackBtn.ZIndex = 20
 navBackBtn.Parent = frame
 
+-- Fix Lebar & Overlap Teks Title
 local title = Instance.new("TextLabel")
-title.Size = UDim2.new(0, 95, 0, 20)
+title.Size = UDim2.new(0, 65, 0, 20) -- Diperpendek agar tidak nabrak tombol minus "-"
 title.Position = UDim2.new(0, 10, 0, 2)
 title.BackgroundTransparency = 1
 title.TextTransparency = 1 
 title.Text = "FPS Boost"
 title.TextColor3 = Color3.new(1, 1, 1)
 title.Font = Enum.Font.GothamBold
-title.TextSize = 16 -- Diperbesar dikit
+title.TextSize = 16 
 title.TextXAlignment = Enum.TextXAlignment.Left
+title.TextTruncate = Enum.TextTruncate.AtEnd -- Akan jadi "Pengat..." jika kepanjangan
 title.Parent = frame
 
 local credit = Instance.new("TextLabel")
@@ -670,7 +672,7 @@ settingsMenu.BackgroundTransparency = 1
 settingsMenu.BorderSizePixel = 0
 settingsMenu.ScrollBarThickness = 3
 settingsMenu.ScrollBarImageColor3 = Color3.fromRGB(150, 150, 150)
-settingsMenu.CanvasSize = UDim2.new(0, 0, 0, 389)
+settingsMenu.CanvasSize = UDim2.new(0, 0, 0, 395)
 settingsMenu.AutomaticCanvasSize = Enum.AutomaticSize.None
 settingsMenu.ScrollingDirection = Enum.ScrollingDirection.Y
 settingsMenu.ClipsDescendants = true
@@ -721,7 +723,6 @@ btnUltraFPS.Text = "Ultra"
 btnUltraFPS.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 btnUltraFPS.Parent = settingsMenu
 
--- TOMBOL SMART FPS CAP (Dengan space tambahan di bawah Ultra)
 local smartFpsCapBtn = Instance.new("TextButton")
 smartFpsCapBtn.Size = UDim2.new(0, 166, 0, 28)
 smartFpsCapBtn.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -767,7 +768,6 @@ UI.smartFpsCapDot.BorderSizePixel = 0
 UI.smartFpsCapDot.Parent = smartFpsCapBtn
 Instance.new("UICorner", UI.smartFpsCapDot).CornerRadius = UDim.new(1, 0)
 
--- TOMBOL FPS CAP MANUAL
 local fpsCapBtn = Instance.new("TextButton")
 fpsCapBtn.Size = UDim2.new(0, 166, 0, 28)
 fpsCapBtn.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -813,10 +813,10 @@ UI.fpsCapDot.BorderSizePixel = 0
 UI.fpsCapDot.Parent = fpsCapBtn
 Instance.new("UICorner", UI.fpsCapDot).CornerRadius = UDim.new(1, 0)
 
--- FPS CAP SLIDER CONTAINER (Dinaikkan dan dirapatkan spacenya)
+-- FPS CAP SLIDER CONTAINER
 local fpsCapBox = Instance.new("Frame")
 fpsCapBox.Size = UDim2.new(0, 166, 0, 22)
-fpsCapBox.Position = UDim2.new(0, 6, 0, 136)
+fpsCapBox.Position = UDim2.new(0, 6, 0, 142) -- Turunin dikit sesuai request
 fpsCapBox.BackgroundTransparency = 1
 fpsCapBox.BorderSizePixel = 0
 fpsCapBox.Parent = settingsMenu
@@ -889,7 +889,7 @@ updateFpsCapSliderVisual(currentFpsCap)
 -- AFK SETTINGS
 UI.afkSettingsLabel = Instance.new("TextLabel")
 UI.afkSettingsLabel.Size = UDim2.new(0, 166, 0, 12)
-UI.afkSettingsLabel.Position = UDim2.new(0, 6, 0, 163)
+UI.afkSettingsLabel.Position = UDim2.new(0, 6, 0, 169)
 UI.afkSettingsLabel.BackgroundTransparency = 1
 UI.afkSettingsLabel.Text = "AFK Settings"
 UI.afkSettingsLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -901,7 +901,7 @@ UI.afkSettingsLabel.Parent = settingsMenu
 local afkBtn = Instance.new("TextButton")
 afkBtn.Size = UDim2.new(0, 166, 0, 28)
 afkBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-afkBtn.Position = UDim2.new(0, 6 + 83, 0, 176 + 14)
+afkBtn.Position = UDim2.new(0, 6 + 83, 0, 182 + 14)
 afkBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 afkBtn.Text = ""
 afkBtn.AutoButtonColor = false
@@ -945,7 +945,7 @@ Instance.new("UICorner", UI.afkDot).CornerRadius = UDim.new(1, 0)
 
 local afkSliderContainer = Instance.new("Frame")
 afkSliderContainer.Size = UDim2.new(0, 166, 0, 24)
-afkSliderContainer.Position = UDim2.new(0, 6, 0, 208)
+afkSliderContainer.Position = UDim2.new(0, 6, 0, 214)
 afkSliderContainer.BackgroundTransparency = 1
 afkSliderContainer.Active = true
 afkSliderContainer.Parent = settingsMenu
@@ -1024,7 +1024,7 @@ updateSliderVisual(afkLevel)
 -- SCRIPT SETTINGS
 UI.scriptSettingsLabel = Instance.new("TextLabel")
 UI.scriptSettingsLabel.Size = UDim2.new(0, 166, 0, 12)
-UI.scriptSettingsLabel.Position = UDim2.new(0, 6, 0, 238)
+UI.scriptSettingsLabel.Position = UDim2.new(0, 6, 0, 244)
 UI.scriptSettingsLabel.BackgroundTransparency = 1
 UI.scriptSettingsLabel.Text = "Script Settings"
 UI.scriptSettingsLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -1036,7 +1036,7 @@ UI.scriptSettingsLabel.Parent = settingsMenu
 local animBtn = Instance.new("TextButton")
 animBtn.Size = UDim2.new(0, 166, 0, 28)
 animBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-animBtn.Position = UDim2.new(0, 6 + 83, 0, 251 + 14)
+animBtn.Position = UDim2.new(0, 6 + 83, 0, 257 + 14)
 animBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 animBtn.Text = ""
 animBtn.AutoButtonColor = false
@@ -1081,7 +1081,7 @@ Instance.new("UICorner", UI.animDot).CornerRadius = UDim.new(1, 0)
 local autoOnBtn = Instance.new("TextButton")
 autoOnBtn.Size = UDim2.new(0, 166, 0, 28)
 autoOnBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-autoOnBtn.Position = UDim2.new(0, 6 + 83, 0, 283 + 14)
+autoOnBtn.Position = UDim2.new(0, 6 + 83, 0, 289 + 14)
 autoOnBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 autoOnBtn.Text = ""
 autoOnBtn.AutoButtonColor = false
@@ -1126,7 +1126,7 @@ Instance.new("UICorner", UI.autoOnDot).CornerRadius = UDim.new(1, 0)
 local autoExecBtn = Instance.new("TextButton")
 autoExecBtn.Size = UDim2.new(0, 166, 0, 28)
 autoExecBtn.AnchorPoint = Vector2.new(0.5, 0.5)
-autoExecBtn.Position = UDim2.new(0, 6 + 83, 0, 315 + 14)
+autoExecBtn.Position = UDim2.new(0, 6 + 83, 0, 321 + 14)
 autoExecBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 autoExecBtn.Text = ""
 autoExecBtn.AutoButtonColor = false
@@ -1171,7 +1171,7 @@ Instance.new("UICorner", UI.autoExecDot).CornerRadius = UDim.new(1, 0)
 -- FITUR LANGUAGE
 local langContainer = Instance.new("Frame")
 langContainer.Size = UDim2.new(0, 166, 0, 28)
-langContainer.Position = UDim2.new(0, 6, 0, 347)
+langContainer.Position = UDim2.new(0, 6, 0, 353)
 langContainer.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 langContainer.BorderSizePixel = 0
 langContainer.ClipsDescendants = true
@@ -1204,7 +1204,7 @@ UI.langSelectedLabel.BackgroundTransparency = 1
 UI.langSelectedLabel.Text = flagMap[currentLang]
 UI.langSelectedLabel.TextColor3 = Color3.fromRGB(160, 160, 160)
 UI.langSelectedLabel.Font = Enum.Font.Gotham
-UI.langSelectedLabel.TextSize = 10 -- Diperbesar teks negaranya
+UI.langSelectedLabel.TextSize = 10
 UI.langSelectedLabel.TextXAlignment = Enum.TextXAlignment.Left
 UI.langSelectedLabel.Parent = langHeaderBtn
 
@@ -1235,7 +1235,7 @@ for idx, langName in ipairs(languageOrder) do
 	optBtn.Text = "  " .. flagMap[langName]
 	optBtn.TextColor3 = (langName == currentLang) and Color3.new(1, 1, 1) or Color3.fromRGB(120, 120, 120)
 	optBtn.Font = Enum.Font.GothamBold
-	optBtn.TextSize = 12 -- Diperbesar teks negaranya
+	optBtn.TextSize = 12
 	optBtn.TextXAlignment = Enum.TextXAlignment.Left
 	optBtn.AutoButtonColor = false
 	optBtn.Parent = UI.langListFrame
@@ -1244,7 +1244,7 @@ for idx, langName in ipairs(languageOrder) do
 end
 
 local isLangExpanded = false
-local BASE_SETTINGS_CANVAS = 389
+local BASE_SETTINGS_CANVAS = 395
 local EXPANDED_LANG_HEIGHT = 32 + (#languageOrder * 23)
 local EXPANDED_SETTINGS_CANVAS = BASE_SETTINGS_CANVAS + (#languageOrder * 23) + 4
 
@@ -1705,13 +1705,27 @@ table.insert(connections, RunService.Heartbeat:Connect(function(dt)
 		end
 	end)
 
+	-- Deteksi drop FPS cepat dan sinkronkan jika Smart FPS nyala
+	if smartFpsCapEnabled then
+		if currentMeasuredFPS < computedSmartCap - 4 then
+			computedSmartCap = calculateHighestStableCap()
+			syncFpsCap(false)
+			currentFpsCap = computedSmartCap
+			updateFpsCapSliderVisual(computedSmartCap)
+		end
+	end
+
 	if ((boostOn and afkEnabled) or smartFpsCapEnabled) and (now - lastSmartCheck >= 1) then
 		lastSmartCheck = now
-		syncFpsCap(false)
 		if smartFpsCapEnabled then
-			local L = Languages[currentLang] or Languages.English
-			UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc .. " (" .. tostring(computedSmartCap) .. ")"
+			local newSmartCap = calculateHighestStableCap()
+			if newSmartCap ~= computedSmartCap then
+				computedSmartCap = newSmartCap
+				currentFpsCap = computedSmartCap
+				updateFpsCapSliderVisual(computedSmartCap)
+			end
 		end
+		syncFpsCap(false)
 	end
 
 	if not blackScreen.Visible then return end
@@ -1770,10 +1784,6 @@ table.insert(connections, RunService.RenderStepped:Connect(function()
 			'<font color="%s">FPS : %d</font>  <font color="#AAAAAA">|</font>  <font color="%s">MS : %d</font>',
 			fpsHex, currentFPS, msHex, currentMS
 		)
-
-		local recColor = getFpsRecommendColor(currentFpsCap)
-		fpsCapValueLabel.TextColor3 = recColor
-		fpsCapKnob.BackgroundColor3 = recColor
 
 		frames = 0
 		sec = os.clock()
@@ -2156,11 +2166,8 @@ local function updateCapDotsVisual()
 	local smartColor = smartFpsCapEnabled and Color3.fromRGB(50, 220, 50) or Color3.fromRGB(220, 50, 50)
 	local L = Languages[currentLang] or Languages.English
 
-	if smartFpsCapEnabled then
-		UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc .. " (" .. tostring(computedSmartCap) .. ")"
-	else
-		UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc
-	end
+	-- Hapus text angka FPS di belakang deskripsi Smart FPS
+	UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc 
 
 	if animEnabled then
 		TweenService:Create(UI.fpsCapDot, TweenInfo.new(0.2), {BackgroundColor3 = fpsColor}):Play()
@@ -2203,6 +2210,13 @@ table.insert(connections, fpsCapBtn.MouseButton1Click:Connect(function()
 end))
 
 local function updateFpsCapFromX(inputX, isFinished)
+	-- Jika Smart FPS Nyala, cegah modifikasi manual dan otomatis paksa kembali
+	if smartFpsCapEnabled then
+		currentFpsCap = computedSmartCap
+		updateFpsCapSliderVisual(computedSmartCap)
+		return
+	end
+
 	local absPos = fpsCapSliderContainer.AbsolutePosition.X
 	local absSize = fpsCapSliderContainer.AbsoluteSize.X
 	if absSize <= 0 then return end
@@ -2225,6 +2239,12 @@ end
 
 local function startFpsCapDrag(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		if smartFpsCapEnabled then
+			currentFpsCap = computedSmartCap
+			updateFpsCapSliderVisual(computedSmartCap)
+			return
+		end
+
 		isDraggingFpsCap = true
 		dragging = false
 		updateFpsCapFromX(input.Position.X, false)
@@ -2492,11 +2512,8 @@ local function applyLanguage(langKey)
 	btnUltraFPS.Text = L.Ultra
 
 	UI.smartFpsCapTitle.Text = L.SmartFpsCap
-	if smartFpsCapEnabled then
-		UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc .. " (" .. tostring(computedSmartCap) .. ")"
-	else
-		UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc
-	end
+	-- Hapus Angka FPS di Belakang
+	UI.smartFpsCapDesc.Text = L.SmartFpsCapDesc 
 
 	UI.fpsCapTitle.Text = L.FpsCap
 	UI.fpsCapDesc.Text = L.FpsCapDesc
